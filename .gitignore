@@ -1,7 +1,8 @@
 disks/cdda
 disks/files
 disks/gen
-disks/raw_files
+disks/rawfiles
+disks/script_template.dsc
 disks/**/*.bin
 disks/**/*.cue
 tools/blackt/obj
@@ -15,3 +16,5 @@ tools/libdiscaster/**/*.o
 tools/discaster/discanalyze
 tools/discaster/discaster
 tools/discaster/test
+x4_rebuild.bin
+x4_rebuild.cue

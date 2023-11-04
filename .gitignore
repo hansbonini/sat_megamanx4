@@ -1,4 +1,5 @@
-disks/cdda
+assets/videos/*.avi
+disks/cdda/*.wav
 disks/files
 disks/gen
 disks/rawfiles

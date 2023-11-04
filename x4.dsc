@@ -26,8 +26,8 @@ isoFs.addDescriptorSetTerminator()
 isoFs.addTypeLPathTable()
 isoFs.addTypeMPathTable()
 
-isoFs.insertDiscPointer("CDDA1", ":track2start", ":track2end")
-isoFs.insertDiscPointer("CDDA2", ":track3start", ":track3end")
+isoFs.insertDiscPointer("MUSIC0.DA", ":track2start", ":track2end")
+isoFs.insertDiscPointer("MUSIC1.DA", ":track3start", ":track3end")
 
   isoFs.addDirectoryDescriptor("")
     isoFs.addListedFile("0.BIN")

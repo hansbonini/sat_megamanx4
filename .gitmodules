@@ -1,0 +1,3 @@
+[submodule "tools/splitter"]
+	path = tools/splitter
+	url = https://github.com/sozud/saturn-splitter.git

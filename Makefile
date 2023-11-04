@@ -1,19 +1,29 @@
-# Directories
+# General Directories
 CONFIG_DIR := ./config
+DISKS_DIR := ./disks
 TOOLS_DIR := ./tools
 CHECKSUM_DIR := $(CONFIG_DIR)/checksum
 
-# Tools
-CHECKSUM_BIN := sha1sum
+# Tools Directories
+BCHUNK_DIR := $(TOOLS_DIR)/bchunk
 DISCASTER_DIR := $(TOOLS_DIR)/discaster
-DISCASTER_BIN := $(TOOLS_DIR)/discaster/discaster
 SPLITTER_DIR := $(TOOLS_DIR)/splitter
-SPLITTER_BIN := $(TOOLS_DIR)/rust-dis/target/release/rust-dis
 
-.PHONY: saturn
-saturn: check_saturn
+# Tools Binaries
+CHECKSUM_BIN := sha1sum
+BCHUNK_BIN := $(BCHUNK_DIR)/bchunk
+DISCASTER_BIN := $(DISCASTER_DIR)/discaster
+DISCANALYSE_BIN := $(DISCASTER_DIR)/discanalyze
+SPLITTER_BIN := $(SPLITTER_DIR)/rust-dis/target/release/rust-dis
 
-check_saturn:
+# Track Names
+TRACK_1_BIN := Mega Man X4 (USA) (Track 1).bin
+
+# Extract Data
+.PHONY: extract
+extract: check_disks extract_iso extract_cdda
+
+check_disks:
 	$(info Validating disks checksum...)
 	$(shell $(CHECKSUM_BIN) --check $(CHECKSUM_DIR)/disks.sha > /dev/null)
 	@if [ $(.SHELLSTATUS) -ne 0 ]; then \
@@ -22,3 +32,12 @@ check_saturn:
 	else \
 		echo "Checksum is Valid!"; \
 	fi
+
+extract_iso: $(DISCANALYSE_BIN)
+	$(DISCANALYSE_BIN) "$(DISKS_DIR)/$(TRACK_1_BIN)" $(DISKS_DIR)
+
+extract_cdda:
+
+
+$(DISCANALYSE_BIN):
+	cd $(DISCASTER_DIR) && make

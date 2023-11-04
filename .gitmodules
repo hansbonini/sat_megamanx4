@@ -3,4 +3,4 @@
 	url = https://github.com/sozud/saturn-splitter.git
 [submodule "tools/bchunk"]
 	path = tools/bchunk
-	url = https://github.com/extramaster/bchunk.git
+	url = https://github.com/bjornreppen/binchunk.git

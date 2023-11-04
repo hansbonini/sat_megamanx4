@@ -18,6 +18,7 @@ SPLITTER_BIN := $(SPLITTER_DIR)/rust-dis/target/release/rust-dis
 
 # Track Names
 TRACK_1_BIN := Mega Man X4 (USA) (Track 1).bin
+CUE_FILE := Mega Man X4 (USA).cue
 
 # Extract Data
 .PHONY: extract
@@ -37,7 +38,9 @@ extract_iso: $(DISCANALYSE_BIN)
 	$(DISCANALYSE_BIN) "$(DISKS_DIR)/$(TRACK_1_BIN)" $(DISKS_DIR)
 
 extract_cdda:
-
+	mkdir -p $(DISKS_DIR)/cdda
+	bchunk -w "$(DISKS_DIR)/$(TRACK_1_BIN)" "$(DISKS_DIR)/$(CUE_FILE)" "$(DISKS_DIR)/cdda/track_"
+	rm -rf "$(DISKS_DIR)/cdda/track_01.iso"
 
 $(DISCANALYSE_BIN):
 	cd $(DISCASTER_DIR) && make

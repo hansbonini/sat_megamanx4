@@ -1,2 +1,17 @@
+disks/cdda
+disks/files
+disks/gen
+disks/raw_files
 disks/**/*.bin
 disks/**/*.cue
+tools/blackt/obj
+tools/blackt/**/*.a
+tools/blackt/**/*.d
+tools/blackt/**/*.o
+tools/libdiscaster/obj
+tools/libdiscaster/**/*.a
+tools/libdiscaster/**/*.d
+tools/libdiscaster/**/*.o
+tools/discaster/discanalyze
+tools/discaster/discaster
+tools/discaster/test

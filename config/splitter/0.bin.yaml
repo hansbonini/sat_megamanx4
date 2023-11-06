@@ -1,0 +1,18 @@
+options:
+  target_path:  disks/files/0.BIN
+  asm_path:     asm/0
+  src_path:     src
+  ld_scripts_path: config/splitter
+  syms_path: config/splitter
+  decomp_empty_funcs: false
+segments:
+  - name: 0
+    type: code
+    start: 0x00000000
+    vram:  0x06000000
+    subalign: 4
+    subsegments:
+      - start: 0x0
+        type: code
+        file: 0
+        end: 0x659E7

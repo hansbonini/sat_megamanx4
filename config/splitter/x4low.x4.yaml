@@ -1,0 +1,18 @@
+options:
+  target_path:  disks/files/X4LOW.X4
+  asm_path:     asm/x4low
+  src_path:     src
+  ld_scripts_path: config/splitter
+  syms_path: config/splitter
+  decomp_empty_funcs: false
+segments:
+  - name: x4low
+    type: code
+    start: 0x00000000
+    vram:  0x00220000
+    subalign: 4
+    subsegments:
+      - start: 0x0
+        type: code
+        file: x4low
+        end: 0x89FFE

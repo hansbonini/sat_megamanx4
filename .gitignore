@@ -1,3 +1,4 @@
+asm/**/*
 assets/videos/*.avi
 disks/cdda/*.wav
 disks/files
@@ -6,6 +7,8 @@ disks/rawfiles
 disks/script_template.dsc
 disks/**/*.bin
 disks/**/*.cue
+dump/**/*
+savestates/**/*
 tools/blackt/obj
 tools/blackt/**/*.a
 tools/blackt/**/*.d

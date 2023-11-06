@@ -32,6 +32,10 @@ extract: check_disks extract_iso extract_cdda cpk_to_avi
 .PHONY: rebuild
 rebuild: rebuild_iso
 
+.PHONY: test
+test:
+	yabause -a -i ./x4_rebuild.cue > /dev/null
+
 rebuild_iso: $(DISCASTER_BIN)
 	$(DISCASTER_BIN) x4.dsc
 

@@ -1,0 +1,5 @@
+CODE
+0x00229E9E = Set width of sprite used to character dialogues
+0x0603AD54
+VRAM
+0x05C00F80 = Sprite used to character dialogues
